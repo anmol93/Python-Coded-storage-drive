@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+		<title>Appsec Lab login</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'mystyle.css') }}">
+
+
+</head>
+<body>
+
+<div class="nav">
+		<nav class="navbar navbar-inverse navbar-fixed-top " style="background-color:#b30000;" >
+		  <div class="container-fluid">
+			<div class="navbar-header" >
+			 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+
+			  <!--<a class="navbar-brand" href="index.html"><img src="logo.jpg" class="img-rounded" alt="logo" width="200" height="30"></a>-->
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+			  <ul class="nav navbar-nav">
+				<li class="active"><a id="lc" href="/">Home</a></li>
+				<li><a id="lc" href="#">About us</a></li>
+				<li><a id="lc" href="#">Photos</a></li>
+				<li><a id="lc"href="#">Contact us</a></li>
+			  </ul>
+			  <ul class="nav navbar-nav navbar-right">
+				<li><a id="lc" href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+				<li><a id="lc" href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			  </ul>
+			</div>
+		  </div>
+	</nav>
+</div>
+
+<br><br><br><br>
+<p id="big" style="color:#0066ff; font-size:5vmax; text-align:center">Login page</p>
+
+<div class="container" style="background-color:white; padding:4% 3% 0% 3%;">
+<h1 id="medium" style="font-size:3em;">
+
+<form id = "login" method = "post" action = "http://127.0.0.1:5000/login" enctype="multipart/form-data">
+	<h2>Enter Username:
+	<input type="text" name="username"></h2>
+    <h2>Enter Password:
+	<input type="password" name="password"></h2>
+	<h2><input type = "submit" value = "submit" id = "submit" /></h2>
+</form>
+
+</h1><br>
+<p id="small" style="font-size:1.5em;">
+
+    {% if status == 1 %}
+        *Invalid Login credentials
+    {% else %}
+
+    {% endif %}
+
+</p>
+</div>
+
+
+</body>
+</html>
