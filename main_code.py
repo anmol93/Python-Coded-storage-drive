@@ -235,7 +235,7 @@ def form1():
     form2 = LoginForm()
 
     if form2.validate_on_submit():
-        return "Bitch"
+        return "whatever"
     return render_template('form.html', form2=form2)
 if __name__ == "__main__":
     app.run(debug=True)
